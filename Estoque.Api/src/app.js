@@ -1,7 +1,7 @@
 'use strict';
 
-const express = require('express');
-const bodyParser = require('body-parser');
+const express = require('../node_modules/express');
+const bodyParser = require('../node_modules/body-parser');
 const mongoose = require('mongoose');
 const config = require('./config');
 const app = express();
@@ -33,5 +33,10 @@ app.use(function (req, res, next) {
 
 app.use('/',indexRouter);
 app.use('/produto',produtoRota);
+
+
+//config docker 
+
+const HOST = '0.0.0.0';
 
 module.exports = app;
